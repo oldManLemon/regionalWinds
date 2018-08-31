@@ -1,103 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %} {% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wind Form</title>
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-            <h2>Wind Pressures</h2>
-            <form action="">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="location" type="text">
-                        <label for="location">Location</label>
-                    </div>
+<div class="container">
+    <div class="row">
+        <h2>Wind Pressures</h2>
+        <form method="POST" action="">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="location" type="text">
+                    <label for="location">Location</label>
                 </div>
-
-                <div class="row">
-                    <div class="input-field col s6">
-                        <select>
-                            <option value="" disabled selected>Region</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-                        </select>
-                        <label>Select Region</label>
-                    </div>
+            </div>
+            <!-- Wind Form Examples -->
+            <div class="row">
+                <div class="input-field col s6">
+                    {{form.region}} {{form.region.label}}
                 </div>
-                <div class="row">
-                        <div class="input-field col s6">
-                            <select>
-                                <option value="" disabled selected>Importance</option>
-                                <option value="importance_1">1</option>
-                                <option value="importance_2">2</option>
-                                <option value="importance_3">3</option>
-                                <option value="importance_4">4</option>
-                            </select>
-                            <label>Importance Level</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                            <div class="input-field col s6">
-                                <select>
-                                    <option value="" disabled selected>Terrian Category</option>
-                                    <option value="cat_1">1</option>
-                                    <option value="cat_2">2</option>
-                                    <option value="cat_3">3</option>
-                                    <option value="cat_4">4</option>
-                                </select>
-                                <label>Select Terrain Category</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                                <div class="input-field col s6">
-                                    <select>
-                                        <option value="" disabled selected>M d=</option>
-                                        <option value="md95">0.95</option>
-                                        <option value="md1">1</option>
-                                     
-                                    </select>
-                                    <label>Math M d=</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                    <div class="input-field col s6">
-                                        <select>
-                                            <option value="" disabled selected>Kc</option>
-                                            <option value="kc_1">1</option>
-                                            <option value="kc_95">0.95</option>
-                                            <option value="kc_9">0.9</option>
-                                            <option value="kc_8">0.8</option>
-                                        </select>
-                                        <label>Kc</label>
-                                    </div>
-                                </div>
-            </form>
-
-        </div>
-    </div>
-</body>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    {{form.importance}} {{form.importance.label}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    {{form.terrain}} {{form.terrain.label}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    {{form.md}} {{form.md.label}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    {{form.kc}} {{form.kc.label}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    {{form.ridgeHeight}} {{form.ridgeHeight.label}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    {{form.ridgeHeight}} {{form.eavesHeight.label}}
+                </div>
+            </div>
+            <div class="row">
+                {{form.submit(class="white-text btn blue darken-3")}}
+            </div>
 
 
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('select');
-        var instances = M.FormSelect.init(elems);
-    });
-</script>
+           
+        </form>
 
-</html>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('select');
+                var instances = M.FormSelect.init(elems);
+            });
+        </script> {% endblock content %}

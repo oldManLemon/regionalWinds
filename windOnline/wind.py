@@ -1,6 +1,6 @@
 import pyodbc
 import math
-import tableWorker
+import windOnline.tableWorker as tableWorker
 
 server = 'localhost\\SQLEXPRESS'
 database = 'flaskblog'
@@ -27,6 +27,7 @@ Md = 0.95
 Kc = 1
 HeightRidge=10.5
 EavesHeight=15.5
+
 HeightRidge = int(math.ceil(HeightRidge))
 EavesHeight = int(math.ceil(EavesHeight))
 #print(HeightRidge)
@@ -37,6 +38,8 @@ VuNumber = tableWorker.importanceLevels('[Non Cyclonic]',Importance)
 Vu = tableWorker.regionalWind(Region, str(VuNumber))
 mCatRidge = tableWorker.terrainCats(TerrainCat,str(HeightRidge))
 mCatEaves =tableWorker.terrainCats(TerrainCat,str(EavesHeight))
+
+#Calc Work
 serviceR = float(Vs)*mCatRidge
 serviceE = float(Vs)*mCatEaves
 serviceR = int(round(serviceR))
