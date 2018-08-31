@@ -45,6 +45,9 @@ ultimateR = float(Vu)*mCatRidge*1*1*Md
 ultimateE = float(Vu)*mCatEaves*1*1*Md
 ultimateE = int(round(ultimateE))
 ultimateR = int(round(ultimateR))
+pressureServiceR = (0.6 * serviceR**2/1000)
+
+
 
 print('Vs=', Vs)
 print('Vu=', Vu)
@@ -54,6 +57,7 @@ print('Serivce Ridge', serviceR)
 print('Serivce Eaves', serviceE)
 print('Ultimate Ridge', ultimateR)
 print('Utlimate Eaves', ultimateE)
+print(pressureServiceR)
 
 
 
