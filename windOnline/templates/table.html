@@ -1,0 +1,50 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+    <h3>Results</h3>
+    <table>
+        <th></th>
+        <th>Heights</th>
+        <th>M z.cat</th>
+        <th colspan="2">V <sub>des</sub>,&theta;(m/s) </th>
+        <th colspan="2">qz = 0.5 &rho;air[V<sub>des, &theta;</sub>]<sup>2</sup>(kPa)</th>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th>Serviceablitity</th>
+            <th>Ultimate</th>
+            <th>Serviceablitity</th>
+            <th>Ultimate</th>
+        </tr>
+        <tr>
+            <th>Ridge Height</th>
+
+            <td>{{rHeight}}</td>
+            <td>{{mcatRidge}}</td>
+            <td>{{vServiceR}}</td>
+            <td>{{vUltimateR}}</td>
+            <td style='color:#c62828'>0.58</td>
+            <td style='color:#c62828'>0.78</td>
+        </tr>
+        <tr>
+            <th>Eaves Height</th>
+            <td>{{eHeight}}</td>
+            <td>{{mcatEaves}}</td>
+            <td>{{vServiceE}}</td>
+            <td>{{vUltimateE}}</td>
+            <td style='color:#c62828'>0.67</td>
+            <td style='color:#c62828'>0.67</td>
+            
+        </tr>
+    </table>
+    <span style="color:#c62828">* Note: These (red) values are hardcoded in I need someone to come help with the math!</span>
+   <br><span >Note 2: I am not an engineer this is a draft program only! Math may be funky! DO NOT USE FOR OFFICIAL PURPOSES!</span>
+    <div class="row">
+        <div class="col s2"><a class="waves-effect waves-light btn pink darken-3 text-white">Download as PDF</a></div>
+        <div><a class="waves-effect waves-light btn blue darken-3 text-white">New Wind Calc</a></div>
+    </div> 
+   
+</div>
+
+
+{% endblock content %}

@@ -4,6 +4,7 @@
     <div class="row">
         <h2>Wind Pressures</h2>
         <form method="POST" action="">
+                {{form.hidden_tag()}}
             <div class="row">
                 <div class="input-field col s6">
                     <input id="location" type="text">
@@ -43,17 +44,22 @@
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    {{form.ridgeHeight}} {{form.eavesHeight.label}}
+                    {{form.eavesHeight}} {{form.eavesHeight.label}}
                 </div>
             </div>
             <div class="row">
                 {{form.submit(class="white-text btn blue darken-3")}}
             </div>
+            {{ form.csrf_token }}
 
 
 
            
         </form>
+
+        <div class="container" style="display:{{displayOption}}">
+
+        </div>
 
 
         <script>

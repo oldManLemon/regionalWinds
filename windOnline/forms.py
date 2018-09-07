@@ -22,3 +22,6 @@ class windForm(FlaskForm):
     ridgeHeight = FloatField('Ridge Height', validators=[DataRequired(), NumberRange(min = 1, max = 200)])
     eavesHeight = FloatField('Eaves Height',validators=[DataRequired(), NumberRange(min = 1, max = 200)])
     submit = SubmitField('Calculate')
+
+    
+        
